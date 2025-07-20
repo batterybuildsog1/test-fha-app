@@ -1,0 +1,96 @@
+/* DTI Mobile Optimizations */
+
+/* Prevent double-tap zoom on buttons */
+.dti-button {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Better touch targets */
+.dti-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Smooth transitions for mobile */
+.dti-transition {
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+}
+
+/* Active states for touch feedback */
+.dti-button:active {
+  transform: scale(0.95);
+}
+
+/* Mobile modal styles */
+@media (max-width: 640px) {
+  .dti-modal-content {
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    margin: 0;
+  }
+  
+  .dti-wizard-navigation {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .dti-wizard-content {
+    padding-bottom: 80px; /* Space for fixed navigation */
+  }
+  
+  /* Full width inputs on mobile */
+  .dti-input {
+    width: 100%;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  @media (max-width: 380px) {
+    .dti-button-group {
+      flex-direction: column;
+    }
+    
+    .dti-button-group button {
+      width: 100%;
+    }
+  }
+}
+
+/* Improved scrolling performance */
+.dti-scrollable {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* Better select dropdowns on mobile */
+.dti-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+/* Loading states */
+.dti-loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* Keyboard visible adjustments */
+@media (max-height: 500px) {
+  .dti-modal-header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .dti-wizard-step {
+    padding: 1rem;
+  }
+}
